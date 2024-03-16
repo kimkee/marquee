@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="./favicon.ico" rel="shrtcut icon">
-    <title>Clipbard Paste Numbers</title>
+    <title>Marquee</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -24,17 +24,31 @@
     let end = -marqueeWidth;
     let current = start;
   
-    function animateMarquee() {
-      current -= 0.5; // 속도 조절 가능
+    let lastTime = 0; // 마지막 애니메이션 시간을 추적
+    const fps = 30; // 초당 프레임 수
+    const fpsInterval = 1000 / fps; // 프레임 간격
+  
+    function animateMarquee(timestamp) {
+      requestAnimationFrame(animateMarquee);
+  
+      // 현재 시간과 마지막 애니메이션 실행 시간의 차이가 fpsInterval보다 작으면 업데이트하지 않음
+      if (timestamp - lastTime < fpsInterval) {
+        return;
+      }
+      
+      lastTime = timestamp; // 마지막 애니메이션 시간 업데이트
+  
+      current -= 2; // 속도 조절 가능
       if (current < end) {
         current = start;
       }
       marqueeText.style.transform = `translateX(${current}px)`;
-      requestAnimationFrame(animateMarquee);
     }
   
-    animateMarquee();
-  </script>
+    requestAnimationFrame(animateMarquee);
+</script>
+  
+  
 
 </body>
 
