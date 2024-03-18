@@ -1,5 +1,9 @@
 ## MARQUEE
 
+```js
+requestAnimationFrame(callback);
+```
+
 ```html
 <div class="marquee">
     <div class="marquee-text" id="marquee-text">반갑습니다! 김선생님! 여기는 JavaScript로 만든 반복되는 애니메이션 효과입니다!</div>
