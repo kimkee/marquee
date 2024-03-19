@@ -3,23 +3,9 @@
 html{}
 body{background-color: #202020;color: #a3a3a3;}
 
-body{display: flex;flex-direction: row;height: 100vh;width: 100%;align-items: center;}
-.marquee {
-  position: relative;
-  overflow: hidden;
-  white-space: nowrap;
-  box-sizing: border-box;
-  width: 100%;
-  height: 40px; /* 필요에 따라 조정 */
-  margin: 10px;
-  background: #333;
-  border-radius: 7px;
-}
-.marquee-text {
-  position: absolute;
-  white-space: nowrap;
-  top: 50%;
-  font-size: 14px;
-  margin-top: -10px;
-}
+body{display: flex;flex-direction: row;height: 100vh;height: 100dvh;width: 100%;align-items: center;overflow: hidden;}
+.marquee {position: relative;overflow: hidden;white-space: nowrap;box-sizing: border-box;width: 100%;height: 32px;margin: 10px;background: #333;border-radius: 6px;border: #656565 solid 2px;box-shadow: inset 1px 1px 4px rgb(0 0 0 / 44%);}
+.marquee-text::selection{background: transparent;}
+.marquee::before{content:"";position: absolute;left: 1px;top: 1px;right: 1px;height: 15px;background-image: linear-gradient(180deg, #a1a1a19c, 35%, transparent);z-index: 10;opacity: 0.5;border-radius: 3px;}
+.marquee-text {position: absolute;white-space: nowrap;top: 50%;font-size: 13px;margin-top: -8px;color: #c7c7c7;text-shadow: 1px 1px 2px #000000a6;line-height: 1;}
   
